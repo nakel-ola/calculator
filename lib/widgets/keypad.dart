@@ -40,7 +40,7 @@ class Keypad extends StatelessWidget {
                 ),
                 Button(
                   onPressed: onPressed,
-                  label: "/",
+                  label: "÷",
                   child: Text("÷", style: greenStyle),
                 ),
                 Button(

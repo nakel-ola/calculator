@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Screen extends StatelessWidget {
-  final String value;
-  final String result;
+  final String title;
+  final String label;
   const Screen({
     super.key,
-    required this.value,
-    required this.result,
+    required this.title,
+    required this.label,
   });
 
   @override
@@ -18,19 +18,20 @@ class Screen extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.3,
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text(value, style: const TextStyle(fontSize: 48.0)),
-            Text(
-              result,
-              style: TextStyle(
-                fontSize: 32.0,
-                color: theme.hintColor,
+            Text(title, style: const TextStyle(fontSize: 48.0)),
+            if (label.isNotEmpty)
+              Text(
+                label,
+                style: TextStyle(
+                  fontSize: 32.0,
+                  color: theme.hintColor,
+                ),
               ),
-            ),
           ],
         ),
       ),
